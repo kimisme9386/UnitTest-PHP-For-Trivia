@@ -6,8 +6,6 @@ class GameRunner
 {
     public function execute()
     {
-        $notAWinner;
-
         $aGame = new Game();
 
         $aGame->add("Chet");
@@ -17,9 +15,9 @@ class GameRunner
 
         do {
 
-            $aGame->roll(rand(0, 5) + 1);
+            $aGame->roll(rand(0,5) + 1);
 
-            if (rand(0, 9) == 7) {
+            if (rand(0,9) == 7) {
                 $notAWinner = $aGame->wrongAnswer();
             } else {
                 $notAWinner = $aGame->wasCorrectlyAnswered();
@@ -27,7 +25,6 @@ class GameRunner
 
 
         } while ($notAWinner);
-
 
     }
 }
